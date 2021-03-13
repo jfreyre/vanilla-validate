@@ -24,13 +24,14 @@ describe("The equal to validator", function () {
   afterEach(() => {
     testForm.remove();
     testElement.remove();
+    jest.resetAllMocks();
   });
 
   it("should have a fixed key", () => {
     expect(sut.key).toBe("equalto");
   });
 
-  it("should fail if data set is not defined", () => {
+  it("should fail if dataset is not defined", () => {
     // arrange
     testElement.value = "foo";
 
