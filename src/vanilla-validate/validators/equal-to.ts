@@ -1,4 +1,4 @@
-import { ElementIsValidFunc, Validator } from "./validator.interface";
+import { Validator } from "./validator.interface";
 
 import "regexp";
 
@@ -10,6 +10,10 @@ const key = "equalto";
 function isValid(element: HTMLElement, form: HTMLFormElement) {
   const targetFieldName = element.dataset.valEqualtoOther;
 
+  if (!targetFieldName) {
+    console.warn(`you should defined a target element`);
+    return false;
+  }
   // TODO: Check if pattern is always the same
   // example is using -> nameAttribute.split(".")[0] + "." + other.split(".")[1];
   var otherName = targetFieldName.split(".")[1];
