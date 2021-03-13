@@ -1,0 +1,242 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <main role="main" class="pb-3">
+      <div class="container">
+        <h1>Vanilla JS Validation</h1>
+
+        <form
+          class="js-form-validation"
+          method="post"
+          data-with-validation=""
+          action="/Home/Submit"
+        >
+          <h2>Complete example.</h2>
+
+          <div class="form-group row" data-children-count="1">
+            <label class="col-3" for="Foo">Custom validation</label>
+
+            <input
+              class="form-control col-9"
+              type="text"
+              data-val="true"
+              data-val-foo="oups"
+              id="Foo"
+              name="Foo"
+              value=""
+              t
+              aria-describedby="fooHelp"
+            />
+            <div id="fooHelp" class="col-9 offset-3 form-text">
+              Will apply a custom validation if uncommented in index.js
+            </div>
+
+            <span
+              class="text-danger offset-3 col-9 field-validation-valid"
+              data-valmsg-for="Foo"
+              data-valmsg-replace="true"
+            ></span>
+          </div>
+
+          <div class="form-group row" data-children-count="1">
+            <label class="col-3" for="UserName">Login Name</label>
+            <input
+              class="form-control col-9"
+              type="text"
+              data-val="true"
+              data-val-regex="The Login Name must be 6 to 100 valid characters which are any digit, any letter and -._@+."
+              data-val-regex-pattern="[a-zA-Z0-9._@+-]{6,100}"
+              data-val-required="The Login Name field is required."
+              id="UserName"
+              name="UserName"
+              value=""
+            />
+            <span
+              class="text-danger offset-3 col-9 field-validation-valid"
+              data-valmsg-for="UserName"
+              data-valmsg-replace="true"
+            ></span>
+          </div>
+
+          <div class="form-group row" data-children-count="1">
+            <label class="col-3" for="Email">Email</label>
+            <input
+              class="form-control col-9"
+              type="text"
+              data-val-email="Invalid email format"
+              data-val="true"
+              data-val-required="The Email field is required."
+              id="Email"
+              name="Email"
+            />
+            <span
+              class="text-danger offset-3 col-9 field-validation-valid"
+              data-valmsg-for="Email"
+              data-valmsg-replace="true"
+            ></span>
+          </div>
+
+          <div class="form-group row" data-children-count="1">
+            <label class="col-3" for="Password">Password</label>
+            <input
+              class="form-control col-9"
+              type="password"
+              data-val="true"
+              data-val-regex="The Password does not meet requirements."
+              data-val-regex-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W]).{8,}$"
+              data-val-required="The Password field is required."
+              id="Password"
+              name="Password"
+              data-kwimpalastatus="alive"
+              data-kwimpalaid="1613145619960-1"
+            />
+            <span
+              class="text-danger offset-3 col-9 field-validation-valid"
+              data-valmsg-for="Password"
+              data-valmsg-replace="true"
+            ></span>
+          </div>
+
+          <div class="form-group row" data-children-count="1">
+            <label class="col-3" for="ConfirmPassword">Confirm password</label>
+            <input
+              class="form-control col-9"
+              type="password"
+              data-val="true"
+              data-val-equalto="The password and confirmation password do not match."
+              data-val-equalto-other="*.Password"
+              id="ConfirmPassword"
+              name="ConfirmPassword"
+              data-kwimpalastatus="alive"
+              data-kwimpalaid="1613145619960-2"
+            />
+            <span
+              class="text-danger offset-3 col-9 field-validation-valid"
+              data-valmsg-for="ConfirmPassword"
+              data-valmsg-replace="true"
+            ></span>
+          </div>
+
+          <div class="form-group row" data-children-count="1">
+            <label class="col-3" for="Size">Size</label>
+            <input
+              id="Size"
+              name="Size"
+              class="form-control col-9"
+              type="number"
+              data-val="true"
+              data-val-range="Size should be between 4 and 10."
+              data-val-range-max="10"
+              data-val-range-min="4"
+            />
+            <span
+              class="text-danger offset-3 col-9 field-validation-valid"
+              data-valmsg-for="Size"
+              data-valmsg-replace="true"
+            ></span>
+          </div>
+
+          <div class="form-group row" data-children-count="1">
+            <label class="col-3" for="RequiredIf">Required if</label>
+            <input
+              id="RequiredIf"
+              name="RequiredIf"
+              class="form-control col-9"
+              type="text"
+              data-val="true"
+              data-val-required-if="This field is required when choice is ipsum"
+              data-val-required-if-target-property="Choice"
+              data-val-required-if-operator="Equal"
+              data-val-required-if-target-value="ipsum"
+            />
+            <span
+              class="text-danger offset-3 col-9 field-validation-valid"
+              data-valmsg-for="RequiredIf"
+              data-valmsg-replace="true"
+            ></span>
+          </div>
+
+          <div class="form-group row" data-children-count="1">
+            <label class="col-3" for="Size">Choice</label>
+
+            <div class="form-check col-9">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="Choice"
+                id="flexRadioDefault1"
+                value="lorem"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Lorem
+              </label>
+            </div>
+            <div class="form-check col-9 offset-3">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="Choice"
+                id="flexRadioDefault2"
+                value="ipsum"
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Ipsum
+              </label>
+            </div>
+
+            <span
+              class="text-danger offset-3 col-9 field-validation-valid"
+              data-valmsg-for="Size"
+              data-valmsg-replace="true"
+            ></span>
+          </div>
+
+          <div class="form-group row">
+            <div
+              class="offset-3 custom-control custom-checkbox"
+              data-children-count="1"
+            >
+              <input
+                class="custom-control-input"
+                type="checkbox"
+                data-val="true"
+                data-val-range="You must accept the Terms of Service."
+                data-val-range-max="True"
+                data-val-range-min="True"
+                data-val-required="The TOSAgree field is required."
+                id="TOSAgree"
+                name="TOSAgree"
+                value="true"
+              />
+              <label class="custom-control-label" for="TOSAgree">
+                I accept the Terms of Service.
+              </label>
+            </div>
+            <span
+              class="text-danger offset-3 col-9 field-validation-valid"
+              data-valmsg-for="TOSAgree"
+              data-valmsg-replace="true"
+            ></span>
+          </div>
+
+          <hr />
+          <h2>Error summary</h2>
+          <div class="text-danger offset-3 col-9">
+            <ul
+              class="validation-summary-valid"
+              data-valmsg-summary="true"
+            ></ul>
+          </div>
+
+          <hr />
+
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+      </div>
+    </main>
+    <script src="src/index.ts"></script>
+  </body>
+</html>
