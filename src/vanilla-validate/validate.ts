@@ -33,27 +33,6 @@ function addValidationError(form, element, message, summary) {
   }
 }
 
-export function validateForm(form) {
-  var returnValue = true;
-  var i;
-  var summary = form.querySelector('[data-valmsg-summary="true"]');
-  summary.textContent = "";
-
-  var elements = form.querySelectorAll("[data-val]");
-
-  for (i = 0; i < elements.length; i++) {
-    const currentInput = elements[i];
-
-    debugger;
-    if (!validateInput(form, currentInput, summary)) {
-      returnValue = false;
-    }
-  }
-
-  console.log("Form validation is finally", returnValue);
-  return returnValue;
-}
-
 export function validateInput(
   form: HTMLFormElement,
   element: HTMLElement,
@@ -63,7 +42,7 @@ export function validateInput(
 
   console.log("START validator of ", element.getAttribute("name"));
 
-  for (const [key, validator] of Object.entries(validators)) {
+  for (const [, validator] of Object.entries(validators)) {
     let attrKey = `data-val-${validator.key}`;
 
     if (element.hasAttribute(attrKey)) {
@@ -88,5 +67,26 @@ export function validateInput(
     returnValue
   );
 
+  return returnValue;
+}
+
+export function validateForm(form) {
+  var returnValue = true;
+  var i;
+  var summary = form.querySelector('[data-valmsg-summary="true"]');
+  summary.textContent = "";
+
+  var elements = form.querySelectorAll("[data-val]");
+
+  for (i = 0; i < elements.length; i++) {
+    const currentInput = elements[i];
+
+    debugger;
+    if (!validateInput(form, currentInput, summary)) {
+      returnValue = false;
+    }
+  }
+
+  console.log("Form validation is finally", returnValue);
   return returnValue;
 }
