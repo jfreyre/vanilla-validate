@@ -1,9 +1,9 @@
+import "regexp";
 import { Validator } from "./validator.interface";
 
-import "regexp";
-
 const key = "range";
-function isValid(element: HTMLElement, form: HTMLFormElement) {
+
+function isValid(element: HTMLInputElement, form: HTMLFormElement) {
   let value = element.value.toLowerCase();
 
   let min = element.dataset.valRangeMin?.toLowerCase();

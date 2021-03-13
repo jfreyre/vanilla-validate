@@ -1,14 +1,11 @@
-import { ElementIsValidFunc, Validator } from "./validator.interface";
+import { Validator } from "./validator.interface";
 
 import "regexp";
 
 const key = "email";
 
-const isValid: ElementIsValidFunc = (
-  element: HTMLElement,
-  form: HTMLFormElement
-) => {
-  let value = (element as HTMLInputElement).value.toLowerCase();
+function isValid(element: HTMLInputElement, form: HTMLFormElement) {
+  let value = element.value.toLowerCase();
 
   if (value.length > 0) {
     // TODO: Real basic email validation. Must be improved
@@ -19,7 +16,7 @@ const isValid: ElementIsValidFunc = (
   }
 
   return true;
-};
+}
 
 let emailValidator: Validator = {
   key,
