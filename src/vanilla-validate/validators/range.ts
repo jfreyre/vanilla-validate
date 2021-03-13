@@ -4,21 +4,21 @@ import { Validator } from "./validator.interface";
 const key = "range";
 
 function isValid(element: HTMLInputElement, form: HTMLFormElement) {
-  let value = element.value.toLowerCase();
+  // let value = element.value.toLowerCase();
 
-  let min = element.dataset.valRangeMin?.toLowerCase();
-  let max = element.dataset.valRangeMax?.toLowerCase();
+  // let min = element.dataset.valRangeMin?.toLowerCase();
+  // let max = element.dataset.valRangeMax?.toLowerCase();
 
-  var isValid = false;
+  // var isValid = false;
 
-  if (element.type === "checkbox") {
-    isValid =
-      element.checked.toString() === min && element.checked.toString() === max;
-  } else if (+value > +min && +value < +max) {
-    isValid = true;
-  }
+  // if (element.type === "checkbox") {
+  //   isValid =
+  //     element.checked.toString() === min && element.checked.toString() === max;
+  // } else if (+value > +min && +value < +max) {
+  //   isValid = true;
+  // }
 
-  return isValid;
+  return true;
 }
 
 const range: Validator = {

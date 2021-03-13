@@ -6,12 +6,11 @@ import {
   registerNewValidator
 } from "./vanilla-validate";
 
-console.log("aaa");
-
 // Uncomment to register a custom validation
 registerNewValidator({
   key: "foo",
   isValid: (element, form) => {
+    // this one will be invalid forever
     return false;
   }
 });

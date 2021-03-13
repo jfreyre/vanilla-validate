@@ -4,7 +4,7 @@ import "regexp";
 
 const key = "email";
 
-function isValid(element: HTMLInputElement, form: HTMLFormElement) {
+function isValid(element: HTMLInputElement) {
   let value = element.value.toLowerCase();
 
   if (value.length > 0) {
