@@ -4,5 +4,5 @@ export interface Validator {
 }
 
 export interface ElementIsValidFunc {
-  (element: HTMLElement, form: HTMLFormElement): boolean;
+  (element: HTMLSelectElement, form: HTMLFormElement): boolean;
 }

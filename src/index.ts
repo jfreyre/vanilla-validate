@@ -6,7 +6,7 @@ import {
   registerNewValidator
 } from "./vanilla-validate";
 
-console.log("aa");
+console.log("aaa");
 
 // Uncomment to register a custom validation
 registerNewValidator({
