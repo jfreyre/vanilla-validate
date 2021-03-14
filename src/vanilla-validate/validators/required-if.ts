@@ -17,19 +17,21 @@ function compareValue(valueToCompare, operator, targetValue) {
   }
 }
 
-const elementIsRadioOrCheckbox = (element) =>
+const elementIsRadioOrCheckbox = (element: HTMLInputElement) =>
   element.type === "checkbox" || element.type === "radio";
 
 const key = "required-if";
 
-function isValid(element: HTMLElement, form: HTMLFormElement) {
+function isValid(element: HTMLInputElement, form: HTMLFormElement) {
   const compareToProperty = element.dataset.valRequiredIfTargetProperty;
   const targetValue = element.dataset.valRequiredIfTargetValue;
   const operator = element.dataset.valRequiredIfOperator;
 
+  console.log(form.querySelectorAll(`[name="${compareToProperty}"]`));
   let elementToCompare = [
     ...form.querySelectorAll(`[name="${compareToProperty}"]`)
   ];
+
   const currentIsCheckbox = elementIsRadioOrCheckbox(element);
   const targetIsCheckbox = elementIsRadioOrCheckbox(elementToCompare[0]);
 
