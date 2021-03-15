@@ -46,15 +46,15 @@ describe("The required-if validator", function () {
 
   describe("when target and operator exist", () => {
     beforeEach(() => {
-      targetElement.value = testElement.dataset.valRequiredIfTargetValue =
-        "bar";
+      targetElement.value
+        = testElement.dataset.valRequiredIfTargetValue
+        = "bar";
       testElement.dataset.valRequiredIfOperator = "Equal";
       testElement.dataset.valRequiredIfTargetProperty = targetElement.name;
     });
 
     it("should be valid if there is a value", () => {
       // arrange
-      
       testElement.value = "foo";
 
       // act

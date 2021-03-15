@@ -27,19 +27,19 @@ function isValid(element: HTMLInputElement, form: HTMLFormElement) {
   const targetValue = element.dataset.valRequiredIfTargetValue;
   const operator = element.dataset.valRequiredIfOperator;
 
-  console.log(form.querySelectorAll(`[name="${compareToProperty}"]`));
-  let elementToCompare = [
+
+  let elementsToCompare = [
     ...form.querySelectorAll(`[name="${compareToProperty}"]`)
   ];
 
   const currentIsCheckbox = elementIsRadioOrCheckbox(element);
-  const targetIsCheckbox = elementIsRadioOrCheckbox(elementToCompare[0]);
+  const targetIsCheckbox = elementIsRadioOrCheckbox(elementsToCompare[0]);
 
   if (targetIsCheckbox) {
-    elementToCompare = elementToCompare.find((input) => input.checked);
+    elementsToCompare = [elementsToCompare.find((input) => input.checked)];
   }
 
-  const valToCompare = elementToCompare ? elementToCompare.value : null;
+  const valToCompare = elementsToCompare ? elementsToCompare[0].value : null;
 
   let isRequired = compareValue(valToCompare, operator, targetValue);
 
