@@ -4,16 +4,16 @@
   "description": "dotnet validate plugin. Strongly inspired from jquery-validate",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html --open",
+    "start": "parcel demo/index.html --open",
     "build": "parcel build index.html",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
-    "bootstrap": "4.6.0",
     "regexp": "1.0.0"
   },
   "devDependencies": {
+    "bootstrap": "4.6.0",
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "@babel/preset-typescript": "^7.13.0",
