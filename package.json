@@ -13,12 +13,12 @@
     "regexp": "1.0.0"
   },
   "devDependencies": {
-    "bootstrap": "4.6.0",
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "@babel/preset-typescript": "^7.13.0",
     "@types/jest": "^26.0.20",
     "babel-jest": "^26.6.3",
+    "bootstrap": "4.6.0",
     "jest": "^26.6.3",
     "parcel": "^2.0.0-beta.2",
     "parcel-bundler": "^1.12.5",
