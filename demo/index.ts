@@ -5,7 +5,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import {
   initVanillaValidation,
   registerNewValidator
-} from "../src/vanilla-validate";
+} from "../src";
 
 // Uncomment to register a custom validation
 registerNewValidator({
